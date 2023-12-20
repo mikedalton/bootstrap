@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # browser default
 defbro com.microsoft.edgemac

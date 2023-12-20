@@ -1,0 +1,8 @@
+# To show services by HTTP status
+cat system-logs/haproxy.log | halog -srv -H -q | awk ' NR ==1; NR > 1 { print $0 | " sort -n -r -k 9"} ' | column -t
+
+# To show syslog top five errors
+zcat -f system-logs/syslog* | grep -i "level=ERROR" | grep -o 'msg="[^"]\+"' | sort | uniq -c | sort -rn | head -5
+
+# To show Unicorn API calls
+cat  github-logs/unicorn.log.1 | grep "13T20:" | grep -oP 'controller="\K\S+"' | sort | uniq -c | sort -rn

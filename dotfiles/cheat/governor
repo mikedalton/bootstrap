@@ -1,0 +1,32 @@
+# Count of Git operations by repository
+ghe-governor aggregate repo count -t 1465210800
+
+# Count of clones and fetches (git upload-pack) by repository
+ghe-governor aggregate repo count -P upload-pack -t 1465210800
+
+# Count of pushes (git receive-pack) by repository
+ghe-governor aggregate repo count -P receive-pack -t 1465210800
+
+# Count of clones or fetches by IP address
+ghe-governor aggregate ip count -P upload-pack -t 1465210800
+
+# Count of clones by user
+ghe-governor aggregate user_id count -P upload-pack -t 1465210800
+
+# Clones from a specific IP
+ghe-governor aggregate repo count -f 'ip == "<ip>"' -P upload-pack -t 1465210800
+
+# Clones from a specific user
+ghe-governor aggregate repo count -f 'uid == <uid>' -P upload-pack -t 1465210800
+
+# Who's using an IP
+ghe-governor aggregate user_id count -f 'ip == "<ip>"' -P upload-pack -t 1465210800
+
+# Bursts of concurrent clones
+ghe-governor aggregate repo max_parallelism -P upload-pack -t 1465210800
+
+# Clone operations for repo
+ghe-governor dump -r <user/repo> -P upload-pack -t 1465210800
+
+# Check repo maintenance
+ghe-governor dump -P repack -r <user/repo> -t 1465210800

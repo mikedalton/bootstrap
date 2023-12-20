@@ -1,0 +1,8 @@
+# To delete index
+echo "Elastomer::SearchIndexManager.delete_index(name: 'index', force: true)" | ghe-console --yes
+
+# To show ES health
+curl --silent --request GET 'http://localhost:9200/_cluster/health?pretty=true'
+
+# To show shard status
+curl localhost:9200/_cat/shards?v

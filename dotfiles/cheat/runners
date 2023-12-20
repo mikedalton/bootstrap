@@ -1,0 +1,2 @@
+# To deregister a runner by deleting files
+rm -f .credentials .credentials_rsaparams .env .path .runner

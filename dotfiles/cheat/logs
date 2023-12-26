@@ -6,3 +6,6 @@ zcat -f system-logs/syslog* | grep -i "level=ERROR" | grep -o 'msg="[^"]\+"' | s
 
 # To show Unicorn API calls
 cat  github-logs/unicorn.log.1 | grep "13T20:" | grep -oP 'controller="\K\S+"' | sort | uniq -c | sort -rn
+
+# To show hookshot log status
+grep "status=" docker/container-logs/hookshot-go.log | grep -o '\ status=[^"]\+\ ' | cut -d " " -f 2 | sort | uniq -c | sort -rn

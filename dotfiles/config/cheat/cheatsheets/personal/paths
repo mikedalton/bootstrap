@@ -1,0 +1,38 @@
+# ghe-config.log
+/data/user/common/ghe-config.log
+
+# actions_state
+/data/user/actions/states/actions_state
+
+# mps_state
+/data/user/actions/states/mps_state
+
+# token_state
+/data/user/actions/states/token_state
+
+# github.conf
+/data/user/common/github.conf
+
+# secrets.conf
+/data/user/common/secrets.conf
+
+# uuid
+/data/user/common/uuid
+
+# peers.info
+/data/user/consul/raft/peers.info
+
+# MSSQL data
+/data/user/mssql/data
+
+# MSSQL log
+/data/user/mssql/log
+
+# auth.log
+/var/log/auth.log
+
+# haproxy.log
+/var/log/haproxy.log
+
+# enterprise-commands
+/usr/local/share/enterprise

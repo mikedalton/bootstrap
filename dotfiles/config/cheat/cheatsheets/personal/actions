@@ -1,0 +1,2 @@
+# To package Lightrail logs
+tar zcf /data/user/tmp/LR_logs.tgz /data/user/actions/lightrail

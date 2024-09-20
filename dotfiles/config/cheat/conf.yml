@@ -63,7 +63,7 @@ cheatpaths:
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.
   - name: personal
-    path: /Users/mikedalton/.config/cheat/cheatsheets/personal
+    path: /Users/mike/.config/cheat/cheatsheets/personal
     tags: [ personal ]
     readonly: false
 

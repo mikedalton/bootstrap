@@ -9,3 +9,6 @@ cat  github-logs/unicorn.log.1 | grep "13T20:" | grep -oP 'controller="\K\S+"' |
 
 # To show hookshot log status
 grep "status=" docker/container-logs/hookshot-go.log | grep -o '\ status=[^"]\+\ ' | cut -d " " -f 2 | sort | uniq -c | sort -rn
+
+# To list the services with events in syslog
+grep -oP "\b(\w+)(?=\[\d+\])" system-logs/syslog | sort | uniq -c

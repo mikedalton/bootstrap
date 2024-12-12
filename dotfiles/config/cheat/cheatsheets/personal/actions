@@ -1,2 +1,5 @@
 # To package Lightrail logs
 tar zcf /data/user/tmp/LR_logs.tgz /data/user/actions/lightrail
+
+# Show repository concurrency
+let owner = "<owner>"; let startTime = ago(1h); let endTime = now(); ProductTrace | where Service == "pipelines" | where PreciseTimeStamp between(startTime..endTime) | where Tracepoint == 10016133 | parse Message with "Hosted pool concurrency: Current concurrency: "CurrentConcurrency:int" , Max concurrency: "MaxWinConcurrency:int | join kind = inner ( ProductTrace | where Service == "pipelines" | where PreciseTimeStamp between(startTime..endTime) | where Tracepoint == 10016128 | parse Message with "MacOs concurrency: MaxConcurrency: "MaxMacConcurrency:int", CurrentConcurrency: "CurrentConcurrency:int ) on OrchestrationId | join kind=inner (AgentRequest | where PreciseTimeStamp between (startTime .. endTime)) on OrchestrationId | where OwnerName == owner | project CurrentConcurrency, MaxWinConcurrency, MaxMacConcurrency | take 1

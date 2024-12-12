@@ -1,0 +1,11 @@
+# Repository Host Details
+GetNwoInfo("<nwo>") | where Stamp == "dotcom"
+
+# Get Org info
+GetOrgInfo("<owner_name>");
+
+# Get Pool ID
+RunnerPoolLatestInfo | where PreciseTimeStamp > ago(1d) | where HostId == <host_id> | summarize by PoolId, PoolName, tostring(Labels)
+
+# Get Concurrency
+let BillingOwnerName="<owner>"; GetConcurrency(BillingOwnerName);

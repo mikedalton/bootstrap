@@ -3,16 +3,10 @@
 - [ ] Install Homebrew
   - [ ] `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - [ ] `brew update`?
-- [ ] Install Edge 
-  - [ ] `brew install --cask microsoft-edge` 
-  - [ ] Make default
-    - [ ] `brew install jwbargsten/misc/defbro`
-    - [ ] `defbro com.microsoft.edgemac`
-- [ ] Install Keeper
-  - [ ] `brew install --cask keeper-password-manager`
-- [ ] Install Alfred
-  - [ ] `brew install --cask alfred`
-  - [ ] Restore workflows and settings
+- [ ] Install Antidote
+  - [ ] `brew install antidote`
+  - [ ] Restore `.zsh_plugins.txt` config file
+  - [ ] Configure `.zshrc`
 - [ ] Install Karabiner Elements
   - [ ] `brew install --cask karabiner-elements`
   - [ ] Restore settings
@@ -20,26 +14,14 @@
   - [ ] `brew install --cask visual-studio-code`
   - [ ] Restore settings
   - [ ] Restore extensions
-- [ ] Install Notion
-  - [ ] `brew install --cask notion`
 - [ ] Install Obsidian
   - [ ] `brew install --cask obsidian`
-- [ ] Install Office
-- [ ] Install Docker
-  - [ ] `brew install docker`
 - [ ] Install Dropzone 4
   - [ ] `brew install --cask dropzone`
-- [ ] Install Insomnia
-  - [ ] `brew install --cask insomnia`
 - [ ] Install Keka
   - [ ] `brew install --cask keka`
 - [ ] Install Magnet/Rectangle
   - [ ] `brew install --cask rectangle`
-- [ ] Install Mailplane
-  - [ ] `brew install --cask mailplane`
-- [ ] Install NordVPN
-  - [ ] `brew install --cask nordvpn`
-- [ ] Install Postman
-  - [ ] `brew install --cask postman`
-- [ ] Install PowerShell
-  - [ ] `brew install --cask powershell`
+- [ ] Install Ghostty
+  - [ ] `brew install --cask ghostty`
+  - [ ] Restore config file

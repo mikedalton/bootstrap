@@ -1,0 +1,10 @@
+# .zsh_plugins.txt
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
+
+# Oh-my-zsh dependency management
+getantidote/use-omz
+
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/git

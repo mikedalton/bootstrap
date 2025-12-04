@@ -10,6 +10,6 @@ if ! command_exists brew; then
     die "Homebrew is required but not installed"
 fi
 
-brew install keka
+brew install --cask keka
 
 log_success "Keka installed"

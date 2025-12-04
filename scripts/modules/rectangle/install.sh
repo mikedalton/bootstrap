@@ -10,6 +10,6 @@ if ! command_exists brew; then
     die "Homebrew is required but not installed"
 fi
 
-brew install rectangle
+brew install --cask rectangle
 
 log_success "Rectangle installed"

@@ -4,12 +4,12 @@ set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/../../lib/utils.sh"
 
-# Install Obsidian via Homebrew
-log_info "Installing Obsidian..."
+# Install wget via Homebrew
+log_info "Installing wget..."
 if ! command_exists brew; then
     die "Homebrew is required but not installed"
 fi
 
-brew install --cask obsidian
+brew install wget
 
-log_success "Obsidian installed"
+log_success "wget installed"

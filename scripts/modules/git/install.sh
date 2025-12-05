@@ -4,8 +4,8 @@ set -euo pipefail
 
 source "$(dirname "${BASH_SOURCE[0]}")/../../lib/utils.sh"
 
-PKG_NAME="rectangle"
-PKG_TYPE="cask"
+PKG_NAME="git"
+PKG_TYPE="formula"
 
 # Install via Homebrew
 log_info "Installing $PKG_NAME..."
@@ -20,6 +20,10 @@ if is_brew_package_installed "$PKG_NAME" "$PKG_TYPE"; then
     exit 0
 fi
 
-brew install --cask "$PKG_NAME"
+if [[ "$PKG_TYPE" == "cask" ]]; then
+    brew install --cask "$PKG_NAME"
+else
+    brew install "$PKG_NAME"
+fi
 
 log_success "$PKG_NAME installed"

@@ -51,6 +51,34 @@ get_modules() {
     done
 }
 
+# Check if a Homebrew package (formula or cask) is installed
+# Usage: is_brew_package_installed <name> [type]
+# type: "formula" or "cask". If omitted, checks both.
+is_brew_package_installed() {
+    local name="$1"
+    local type="${2:-}"
+
+    if ! command_exists brew; then
+        return 1
+    fi
+
+    if [[ "$type" == "cask" ]]; then
+        brew list --cask "$name" >/dev/null 2>&1
+        return $?
+    fi
+
+    if [[ "$type" == "formula" ]]; then
+        brew list --formula "$name" >/dev/null 2>&1
+        return $?
+    fi
+
+    # Default: check both formula and cask
+    if brew list --formula "$name" >/dev/null 2>&1 || brew list --cask "$name" >/dev/null 2>&1; then
+        return 0
+    fi
+    return 1
+}
+
 # Prompt user for yes/no
 prompt_yes_no() {
     local prompt="$1"

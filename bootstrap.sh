@@ -19,6 +19,31 @@ if [[ ${#MODULES[@]} -eq 0 ]]; then
     log_warning "No modules found in the modules directory"
 fi
 
+# Ensure `xcode` runs first and `homebrew` runs second (if present), then the rest
+PRIORITY_ORDER=("xcode" "homebrew")
+ordered_modules=()
+
+for pri in "${PRIORITY_ORDER[@]}"; do
+    for i in "${!MODULES[@]}"; do
+        if [[ "${MODULES[$i]}" == "$pri" ]]; then
+            ordered_modules+=("${MODULES[$i]}")
+            # remove from MODULES by unsetting; we'll rebuild remaining list later
+            unset 'MODULES[$i]'
+            break
+        fi
+    done
+done
+
+# Append any remaining modules in their original discovery order
+for m in "${MODULES[@]}"; do
+    # skip empty entries from unset
+    [[ -z "$m" ]] && continue
+    ordered_modules+=("$m")
+done
+
+# Replace MODULES with ordered_modules
+MODULES=("${ordered_modules[@]}")
+
 main() {
     log_info "macOS Bootstrap Script"
     log_info "====================="

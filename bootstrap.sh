@@ -20,7 +20,7 @@ if [[ ${#MODULES[@]} -eq 0 ]]; then
 fi
 
 # Ensure `xcode` runs first and `homebrew` runs second (if present), then the rest
-PRIORITY_ORDER=("xcode" "homebrew")
+PRIORITY_ORDER=("xcode" "homebrew" "font")
 ordered_modules=()
 
 for pri in "${PRIORITY_ORDER[@]}"; do

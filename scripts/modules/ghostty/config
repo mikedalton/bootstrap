@@ -48,7 +48,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-# Apearance
+# appearance
 font-family = FiraCode Nerd Font Mono
 palette = 0=#0c141f
 palette = 1=#df740c
@@ -77,8 +77,20 @@ font-size = 12
 cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = true
+window-padding-x = 10
+window-padding-y = 5
+window-padding-balance = true
+
+# behavior
 mouse-hide-while-typing = true
+scrollback-limit = 9999
+link-url = true
+quick-terminal-animation-duration = 0.1
+window-save-state = always
 
 # macOS-specific settings
 macos-titlebar-style = tabs
 macos-option-as-alt = true
+
+# keybindings
+keybind = global:ctrl+opt+cmd+t=toggle_quick_terminal

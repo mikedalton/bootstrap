@@ -178,6 +178,11 @@
       "newline": true
     }
   ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#ffffff",
+    "template": "{{ .PWD }}> "
+  },
   "version": 3,
   "final_space": true
 }
